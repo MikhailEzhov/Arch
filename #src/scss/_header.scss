@@ -1,0 +1,121 @@
+.header {
+    background-color: #c3cbea; // фон
+    min-width: 320px; // так решил проблему, когда фон начинает ехать при меньше чем 320px
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    &__main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__logo {
+        @import "_animation-elements";
+    }
+
+    &__menu-icon {
+        display: none; // отключаю вообще
+        opacity: 0; // прозрачный - не видно
+        @media (max-width: $breakpointHeaderMenu) {
+            display: flex;
+            opacity: 1; // без прозрачности - видно
+            width: 30px;
+            height: 30px;
+            margin-right: 15px;
+            cursor: pointer;
+            @import "_animation-elements";
+        }
+    }
+
+    &__icon-burger {
+        opacity: 1; // без прозрачности - видно
+        transition: all 0.25s ease-out 0s; // анимация
+        width: 100%;
+        height: auto;
+        margin: 5px 2px;
+        border-top: 3px solid $fontColorMain;
+        border-bottom: 3px solid $fontColorMain;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 40%;
+            width: 100%;
+            height: 3px;
+            background-color: $fontColorMain;
+        }
+    }
+
+    &__icon-exit {
+        opacity: 1; // без прозрачности - видно
+        transition: all 0.5s ease-out 0s; // анимация
+        width: 100%;
+        height: 100%;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 47%;
+            transform: rotate(-45deg);
+            width: 100%;
+            height: 3px;
+            background-color: $fontColorMain;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 47%;
+            transform: rotate(45deg);
+            width: 100%;
+            height: 3px;
+            background-color: $fontColorMain;
+        }
+    }
+
+    &__navigation {
+        display: flex;
+        gap: 48px;
+        @media (max-width: $breakpointHeaderMenu) {
+            width: 100%;
+            flex-direction: column;
+            gap: 30px;
+
+            opacity: 0; // прозрачный - не видно
+            visibility: hidden; // тег становится визуально скрытым, но продолжает участвовать в формировании страницы
+            pointer-events: none; // запрещаем взаимодействие мышкой с этим объктом
+            //transition: all 0.2s ease-in 0s; // анимация
+            height: 0; // высота 0
+        }
+    }
+
+    &__link {
+        align-self: center;
+        @import "_animation-links";
+    }
+
+    &__button {
+        background-color: #424d79;
+        color: #c3cbea;
+        padding: 12px 20px;
+        white-space: nowrap;
+        width: max-content;
+        margin: auto;
+        @import "_animation-buttons";
+    }
+}
+
+.nav-toggle {
+    //‾‾‾‾‾‾‾‾‾‾это для показа блока‾‾‾‾‾‾‾‾‾‾\\
+    opacity: 1; // без прозрачности - видно
+    visibility: visible; // тег отображается. значение по умолчанию
+    pointer-events: all; // разрешаем взаимодействие мышкой с этим объктом
+    transition: all 0.75s ease-out 0s; // анимация
+
+    height: auto; // высота: ЗНАЧЕНИЕ НА ВЫБОР
+    //__________это для показа блока__________//
+}

@@ -1,0 +1,146 @@
+.design {
+    background-color: #f0f3ff; // фон
+    min-width: 320px; // так решил проблему, когда фон начинает ехать при меньше чем 320px
+    overflow-x: hidden; // для слайдера - чтобы не было скрола по X
+    padding-top: 66px;
+    padding-bottom: 102px;
+    @media (max-width: ($maxWidthContentNumber - 1) + px) {
+        @include adaptivPX($maxWidthContentNumber, 66, padding-top, 25);
+        @include adaptivPX($maxWidthContentNumber, 102, padding-bottom, 25);
+    } // можно менять только:                     это     это     это
+    @media (max-width: $breakpointMY320px) {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    } //   это     это
+
+    &__block {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &__title {
+        font-family: "Poppins";
+        font-weight: 600;
+        font-size: 48px;
+        @media (max-width: ($maxWidthContentNumber - 1) + px) {
+            @include adaptivPX($maxWidthContentNumber, 48, font-size, 40);
+        } // можно менять только:                     это     это     это
+        @media (max-width: $breakpointMY320px) {
+            font-size: 40px;
+        } //   это     это
+    }
+
+    &__switches {
+        // height: min-content;
+        display: flex;
+        justify-content: end;
+        align-items: flex-end;
+        @media (max-width: $breakpointMDpx) {
+            justify-content: center;
+        }
+    }
+
+    &__switch-left {
+        width: 64px;
+        height: 64px;
+        margin: 18px;
+        @import "_animation-buttons";
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 10px;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(../img/main/dream_arrow_to_down.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            transform: rotate(90deg);
+        }
+    }
+
+    &__switch-right {
+        width: 64px;
+        height: 64px;
+        margin: 18px;
+        @import "_animation-buttons";
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            top: -10px;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(../img/main/dream_arrow_to_down.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            transform: rotate(-90deg);
+        }
+    }
+
+    &__slider-wrapper {
+        width: 354px;
+        @media (max-width: ($maxWidthContentNumber - 1) + px) {
+            @include adaptivPX($maxWidthContentNumber, 354, width, 310);
+        } // можно менять только:                     это     это     это
+        @media (max-width: $breakpointMY320px) {
+            width: 310px;
+        } //   это     это
+    }
+
+    &__slider-inner {
+        display: flex;
+        transition: all 500ms;
+        gap: 30px;
+    }
+
+    &__slide {
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &_axe {
+            background-image: url(../img/main/design_axe.jpg);
+        }
+
+        &_grand {
+            background-image: url(../img/main/design_grand.jpg);
+        }
+
+        &_abbey {
+            background-image: url(../img/main/design_abbey.jpg);
+        }
+
+        &_cantardo {
+            background-image: url(../img/main/design_cantardo.jpg);
+        }
+
+        &_phoenix {
+            background-image: url(../img/main/design_phoenix_family.jpg);
+        }
+
+        &_rome {
+            background-image: url(../img/main/design_rome.jpg);
+        }
+    }
+
+    &__link {
+        display: block;
+        font-family: "Poppins";
+        font-weight: 600;
+        font-size: 24px;
+        max-width: 330px;
+        color: #ffffff;
+        padding-top: 416px;
+        margin-left: 25px;
+        margin-bottom: 4px;
+        @import "_animation-links";
+    }
+
+    &__location {
+        font-size: 18px;
+        color: #ffffff;
+        margin-left: 25px;
+    }
+}

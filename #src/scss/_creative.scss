@@ -1,0 +1,54 @@
+.creative {
+    margin-top: 52px;
+    padding-bottom: 80px;
+    @media (max-width: ($maxWidthContentNumber - 1) + px) {
+        @include adaptivPX($maxWidthContentNumber, 80, padding-bottom, 25);
+    } // можно менять только:                     это     это     это
+    @media (max-width: $breakpointMY320px) {
+        padding-bottom: 25px;
+    } //   это     это
+
+    &__title {
+        font-family: "Poppins";
+        font-weight: 600;
+        font-size: 48px;
+        width: 560px;
+        @media (max-width: ($maxWidthContentNumber - 1) + px) {
+            @include adaptivPX($maxWidthContentNumber, 48, font-size, 40);
+            @include adaptivPX($maxWidthContentNumber, 560, width, 300);
+        } // можно менять только:                     это     это     это
+        @media (max-width: $breakpointMY320px) {
+            font-size: 40px;
+            width: 300px;
+        } //   это     это
+    }
+
+    &__picture {
+        margin-top: 80px;
+        max-width: 100%;
+        margin-bottom: 47px;
+    }
+
+    &__subtitle {
+        display: block;
+        font-family: "Poppins";
+        font-weight: bold;
+        font-size: 36px;
+        margin-bottom: 24px;
+    }
+
+    &__description {
+        font-size: 24px;
+        color: #1e3240;
+        margin-bottom: 36px;
+    }
+
+    &__button {
+        color: #ffffff;
+        padding: 12px 20px;
+        background-color: #424d79;
+        white-space: nowrap;
+        width: max-content;
+        @import "_animation-buttons";
+    }
+}

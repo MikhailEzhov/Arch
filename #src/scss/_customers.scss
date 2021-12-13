@@ -1,0 +1,130 @@
+.customers {
+    padding-top: 57px;
+    padding-bottom: 110px;
+    @media (max-width: ($maxWidthContentNumber - 1) + px) {
+        @include adaptivPX($maxWidthContentNumber, 57, padding-top, 25);
+        @include adaptivPX($maxWidthContentNumber, 110, padding-bottom, 25);
+    } // можно менять только:                     это     это     это
+    @media (max-width: $breakpointMY320px) {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    } //   это     это
+
+    &__title {
+        font-family: "Poppins";
+        font-weight: 600;
+        font-size: 48px;
+        width: 560px;
+        margin-bottom: 84px;
+        @media (max-width: ($maxWidthContentNumber - 1) + px) {
+            @include adaptivPX($maxWidthContentNumber, 48, font-size, 40);
+            @include adaptivPX($maxWidthContentNumber, 560, width, 300);
+            @include adaptivPX($maxWidthContentNumber, 84, margin-bottom, 30);
+        } // можно менять только:                     это     это     это
+        @media (max-width: $breakpointMY320px) {
+            font-size: 40px;
+            width: 300px;
+            margin-bottom: 30px;
+        } //   это     это
+    }
+
+    &__comments {
+        margin-left: 288px;
+        @media (max-width: ($maxWidthContentNumber - 1) + px) {
+            @include adaptivPX($maxWidthContentNumber, 288, margin-left, 1);
+        } // можно менять только:                     это     это     это
+        @media (max-width: $breakpointMY320px) {
+            margin-left: 1px;
+        } //   это     это
+    }
+
+    &__comments-title {
+        font-family: "Poppins";
+        font-weight: bold;
+        margin-bottom: 16px;
+        font-size: 36px;
+        width: 642px;
+        @media (max-width: ($maxWidthContentNumber - 1) + px) {
+            @include adaptivPX($maxWidthContentNumber, 36, font-size, 30);
+            @include adaptivPX($maxWidthContentNumber, 642, width, 300);
+        } // можно менять только:                     это     это     это
+        @media (max-width: $breakpointMY320px) {
+            font-size: 30px;
+            width: 300px;
+        } //   это     это
+    }
+
+    &__comments-description {
+        font-style: italic;
+        font-size: 24px;
+        color: #1e3240;
+        margin-bottom: 16px;
+    }
+
+    &__comments-block {
+        display: flex;
+        height: 36px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__comments-signature {
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+    &__switches {
+        display: flex;
+        align-items: center;
+        font-size: 40px;
+        margin-right: 180px;
+        @media (max-width: ($maxWidthContentNumber - 1) + px) {
+            @include adaptivPX($maxWidthContentNumber, 180, margin-right, 10);
+        } // можно менять только:                     это     это     это
+        @media (max-width: $breakpointMY320px) {
+            margin-right: 10px;
+        } //   это     это
+    }
+
+    &__switch-left {
+        display: inline-block;
+        margin: 7px;
+        width: 32px;
+        height: 32px;
+        @import "_animation-buttons";
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 5px;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(../img/main/dream_arrow_to_down.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            transform: rotate(90deg);
+        }
+    }
+
+    &__switch-right {
+        display: inline-block;
+        margin: 7px;
+        width: 32px;
+        height: 32px;
+        @import "_animation-buttons";
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            top: -5px;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(../img/main/dream_arrow_to_down.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            transform: rotate(-90deg);
+        }
+    }
+}

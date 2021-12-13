@@ -1,0 +1,87 @@
+.contact {
+    background-color: #c3cbea; // фон
+    min-width: 320px; // так решил проблему, когда фон начинает ехать при меньше чем 320px
+    padding-top: 46px;
+    padding-bottom: 49px;
+    background-image: url(../img/main/contact_house.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: right;
+    @media (max-width: $breakpointXLpx) {
+        background-position-x: 510px;
+    }
+    @media (max-width: $breakpointMDpx) {
+        background-image: none;
+    }
+
+
+    &__block {
+        width: 450px;
+        margin-right: 112px;
+        @media (max-width: ($maxWidthContentNumber - 1) + px) {
+            @include adaptivPX($maxWidthContentNumber, 450, width, 300);
+            @include adaptivPX($maxWidthContentNumber, 112, margin-right, 1);
+        } // можно менять только:                     это     это     это
+        @media (max-width: $breakpointMY320px) {
+            width: 300px;
+            margin-right: 1px;
+        } //   это     это
+    }
+
+    &__title {
+        font-family: "Poppins";
+        background-color: #c3cbea;
+        font-weight: 600;
+        font-size: 48px;
+        margin-bottom: 65px;
+        @media (max-width: ($maxWidthContentNumber - 1) + px) {
+            @include adaptivPX($maxWidthContentNumber, 48, font-size, 40);
+            @include adaptivPX($maxWidthContentNumber, 65, margin-bottom, 36);
+        } // можно менять только:                     это     это     это
+        @media (max-width: $breakpointMY320px) {
+            font-size: 40px;
+            margin-bottom: 36px;
+        } //   это     это
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    &__input-name {
+        border: 2px solid #1e3240;
+        background-color: #c3cbea;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 20px;
+    }
+
+    &__input-email {
+        border: 2px solid #1e3240;
+        background-color: #c3cbea;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 20px;
+    }
+
+    &__input-textarea {
+        border: 2px solid #1e3240;
+        min-height: 144px;
+        background-color: #c3cbea;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 20px;
+    }
+
+    &__input-button {
+        margin-top: 12px;
+        color: #ffffff;
+        padding: 12px 48px;
+        background-color: #424d79;
+        white-space: nowrap;
+        width: max-content;
+        @import "_animation-buttons";
+    }
+}

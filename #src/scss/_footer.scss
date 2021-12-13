@@ -1,0 +1,36 @@
+.footer {
+    margin-top: 25px;
+    padding-bottom: 25px;
+
+    &__block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        align-self: flex-start;
+        @import "_animation-elements";
+    }
+
+    &__navigation {
+        display: flex;
+        padding-left: 50px;
+        flex-wrap: wrap;
+        //margin: auto;
+        gap: 48px;
+        @media (max-width: ($maxWidthContentNumber - 1) + px) {
+            @include adaptivPX($maxWidthContentNumber, 48, gap, 25);
+        } // можно менять только:                     это     это     это
+        @media (max-width: $breakpointMY320px) {
+            gap: 25px;
+        } //   это     это
+    }
+
+    &__link {
+        white-space: nowrap;
+        align-self: center;
+        @import "_animation-links";
+    }
+}
+

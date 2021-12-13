@@ -1,0 +1,23 @@
+// ПЕРЕМЕННЫЕ:
+$fontFamilyMain: "Archivo", Arial, Helvetica, sans-serif; // основное семейство шрифта
+$fontWeightMain: normal; // основная жирность шрифта
+$fontStyleMain: normal; // основной стиль шрифта
+$fontSizeMain: 16px; // основной размер шрифта
+$lineHeightMain: 1.5; // основная высота между текстом
+$fontColorMain: #424D79; // основной цвет шрифта
+
+$placeholderColorMain: rgba(30, 50, 64, 0.26);; // основной цвет подсказки (при наведении или в input)
+
+$borderColorMain: #1E3240; // основной цвет бордера
+
+$backgroundColorMain: #FAFBFF; // основной цвет фона
+
+$maxWidthContentNumber: 1125; // максимальная ширина только контента (это не ширина макета)
+$maxWidthContentPX: 1125px; // максимальная ширина только контента (это не ширина макета)
+
+$minWidthContentNumber: 320; // минимальная ширина контента
+$minWidthContentPX: 320px; // минимальная ширина контента
+
+// СОЗДАЛ ТОЛЬКО ДЛЯ ЭТОГО ПРОЕКТА:
+$breakpointHeaderMenu: 767.98px;
+
